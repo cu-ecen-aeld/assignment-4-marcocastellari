@@ -18,7 +18,7 @@ fi
 # count number of files
 num_files=$(find "$filesdir" -type f | wc -l)
 
-# count lines
+# count number of lines
 num_matching_lines=$(
   if [ "$num_files" -eq 0 ]; then
     echo 0
