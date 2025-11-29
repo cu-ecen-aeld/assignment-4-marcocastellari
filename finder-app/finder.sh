@@ -28,14 +28,3 @@ num_matching_lines=$(
 )
 
 echo "The number of files are ${num_files} and the number of matching lines are ${num_matching_lines}"
-
-
-
- 
-
-
-
-
-
-
-
