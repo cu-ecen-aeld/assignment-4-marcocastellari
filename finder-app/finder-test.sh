@@ -72,9 +72,10 @@ OUTPUTSTRING=$(./finder.sh "$WRITEDIR" "$WRITESTR")
 # 	exit 1
 # fi
 
-# Assignment 2
-make clean
-make writer
+# # Removed for assignment 3 part-1 
+# # Assignment 2
+# make clean
+# make writer
 
 for i in $( seq 1 $NUMFILES)
 do
