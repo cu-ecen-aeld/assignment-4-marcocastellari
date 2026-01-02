@@ -32,7 +32,8 @@ echo "Writing ${NUMFILES} files containing string ${WRITESTR} to ${WRITEDIR}"
 rm -rf "${WRITEDIR}"
 
 # create $WRITEDIR if not assignment1
-assignment=`cat ../conf/assignment.txt`
+# assignment=`cat ../conf/assignment.txt`
+assignment=`cat conf/assignment.txt`
 
 if [ $assignment != 'assignment1' ]
 then
@@ -48,38 +49,15 @@ then
 		exit 1
 	fi
 fi
-#echo "Removing the old writer utility and compiling as a native application"
-#make clean
-#make
 
-for i in $( seq 1 $NUMFILES)
-do
-	./writer.sh "$WRITEDIR/${username}$i.txt" "$WRITESTR"
-done
-
-OUTPUTSTRING=$(./finder.sh "$WRITEDIR" "$WRITESTR")
-
-# # remove temporary directories
-# rm -rf /tmp/aeld-data
-# 
-# set +e
-# echo ${OUTPUTSTRING} | grep "${MATCHSTR}"
-# if [ $? -eq 0 ]; then
-# 	echo "success"
-# 	exit 0
-# else
-# 	echo "failed: expected  ${MATCHSTR} in ${OUTPUTSTRING} but instead found"
-# 	exit 1
-# fi
-
-# # Removed for assignment 3 part-1 
-# # Assignment 2
+# echo "Removing the old writer utility and compiling as a native application"
 # make clean
-# make writer
+# make
 
 for i in $( seq 1 $NUMFILES)
 do
-	./writer "$WRITEDIR/${username}$i.txt" "$WRITESTR"
+	# ./writer.sh "$WRITEDIR/${username}$i.txt" "$WRITESTR"
+	./writer-arm "$WRITEDIR/${username}$i.txt" "$WRITESTR"
 done
 
 OUTPUTSTRING=$(./finder.sh "$WRITEDIR" "$WRITESTR")
@@ -96,3 +74,8 @@ else
 	echo "failed: expected  ${MATCHSTR} in ${OUTPUTSTRING} but instead found"
 	exit 1
 fi
+
+# # Removed for assignment 3 part-1 
+# # Assignment 2
+# make clean
+# make writer
