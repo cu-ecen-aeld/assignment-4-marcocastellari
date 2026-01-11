@@ -12,6 +12,12 @@ git submodule update
 set -e 
 cd `dirname $0`
 
+export BR2_DL_DIR=${HOME}/.dl
+# export BR2_USE_CCACHE=1
+# export BR2_CCACHE_USE_BASEDIR=y
+# export BR2_CCACHE_DIR=${HOME}/.buildroot-cache
+
+
 if [ ! -e buildroot/.config ]
 then
 	echo "MISSING BUILDROOT CONFIGURATION FILE"
